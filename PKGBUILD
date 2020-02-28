@@ -2,7 +2,7 @@
 
 _pkgname=feh
 pkgname=feh-git
-pkgver=3.1.3.r42.ge73eba5
+pkgver=99999.3.1.3.r42.ge73eba5
 pkgrel=1
 pkgdesc='Fast and light imlib2-based image viewer'
 arch=('x86_64')
@@ -19,7 +19,7 @@ conflicts=("${_pkgname}")
 
 pkgver() {
   cd "$_pkgname"
-  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  echo 99999.$(git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g')
 }
 
 build() {
